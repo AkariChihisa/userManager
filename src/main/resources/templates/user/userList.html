@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>用户列表</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"></link>
+</head>
+<body >
+<h1>用户管理页面</h1>
+
+	 <div> 
+	 <form action="#" th:action="@{/findUserById}" method="post">
+    	用户ID: <input type="text" name="id" id="id" placeholder="userid" />
+        <input type="submit" value="查询用户" />
+     </form>
+     </div> 
+     <br>
+    <div>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>姓名</th>
+            <th>密码</th>
+            <th>编辑</th>
+            <th>删除</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user : ${users}">
+            <th scope="row" th:text="${user.id}"></th>
+            <td th:text="${user.username}"></td>
+            <td th:text="${user.password}"></td>
+            <td><a th:href="@{/toEdit(id=${user.id})}">编辑</a></td>
+            <td><a th:href="@{/deleteUser(id=${user.id})}">删除</a></td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+     <br>
+    <div>
+        <a th:href="@{/toAdd}" class="btn btn-info">添加用户</a>
+    </div>
+
+
+</body>
+</html>

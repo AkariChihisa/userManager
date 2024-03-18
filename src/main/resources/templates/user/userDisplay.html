@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>用户列表</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"></link>
+</head>
+<body class="container">
+<br/>
+<h1>用户列表</h1>  
+           用户ID：<th scope="row" th:text="${userdisplay.id}"></th><br>
+           用户名：<th th:text="${userdisplay.username}"></th><br>
+           用户密码：<th th:text="${userdisplay.password}"></th><br>
+</body>
+</html>

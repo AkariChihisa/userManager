@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>修改用户</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"></link>
+</head>
+<body class="container">
+<br/>
+<h1>修改用户</h1>
+
+    <form action="#" th:action="@{/editUser}" th:object="${userbean}" method="post">
+    	<!--th:field="*{uname}"的uname与实体类的属性相同  -->
+        <input type="hidden" name="id" th:field="*{id}" />
+        <p>用户名: <input type="text" th:field="*{username}" th:placeholder="请输入用户名" /></p>
+        <p>密码: <input type="text" th:field="*{password}" th:placeholder="请输入密码"  /></p>
+        <p><input type="submit" value="提交" /> <input type="reset" value="重置" /></p>
+        <p><a href="/toAdd" th:href="@{/}" class="btn btn-info">返回</a></p>
+       </div>
+    
+    </form>
+
+</body>
+</html>
+
